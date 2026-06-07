@@ -13,7 +13,9 @@ import {
   Sun,
   Moon,
   Menu,
-  X
+  X,
+  ShieldAlert,
+  MapPin
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { ExecutiveDashboard } from '../views/ExecutiveDashboard';
@@ -23,6 +25,8 @@ import { ProjectsView } from '../views/ProjectsView';
 import { MaintenanceView } from '../views/MaintenanceView';
 import { HRMSView } from '../views/HRMSView';
 import { RamzAIAssistant } from '../views/RamzAIAssistant';
+import { UsersAndSecurityView } from '../views/UsersAndSecurityView';
+import { ProjectGeoIntelligenceCenter } from '../views/ProjectGeoIntelligenceCenter';
 
 export function ApplicationLayout() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
@@ -45,8 +49,10 @@ export function ApplicationLayout() {
     { id: 'crm', label: 'إدارة علاقات العملاء', icon: <Users size={20} /> },
     { id: 'quotations', label: 'إدارة عروض الأسعار', icon: <FileText size={20} /> },
     { id: 'projects', label: 'إدارة المشاريع', icon: <FolderKanban size={20} /> },
+    { id: 'maps', label: 'مركز متابعة المشاريع الجغرافي', icon: <MapPin size={20} /> },
     { id: 'maintenance', label: 'إدارة الصيانة', icon: <Wrench size={20} /> },
     { id: 'hrms', label: 'الموارد البشرية', icon: <UserCircle size={20} /> },
+    { id: 'users-security', label: 'المستخدمين والصلاحيات', icon: <ShieldAlert size={20} /> },
     { id: 'ai', label: 'المساعد الذكي (RAMZ AI)', icon: <Bot size={20} /> },
   ];
 
@@ -56,8 +62,10 @@ export function ApplicationLayout() {
       case 'crm': return <CRMView />;
       case 'quotations': return <QuotationsView />;
       case 'projects': return <ProjectsView />;
+      case 'maps': return <ProjectGeoIntelligenceCenter />;
       case 'maintenance': return <MaintenanceView />;
       case 'hrms': return <HRMSView />;
+      case 'users-security': return <UsersAndSecurityView />;
       case 'ai': return <RamzAIAssistant />;
       default: return <ExecutiveDashboard />;
     }

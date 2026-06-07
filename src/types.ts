@@ -5,6 +5,8 @@ export type ViewType =
   | 'projects'
   | 'maintenance'
   | 'hrms'
+  | 'maps'
+  | 'users-security'
   | 'ai';
 
 export interface User {
