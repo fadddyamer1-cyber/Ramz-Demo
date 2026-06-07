@@ -1,0 +1,6 @@
+{
+  "name": "RAMZ ONE PLATFORM",
+  "description": "Enterprise-grade business management platform for safety, fire fighting, and security solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
